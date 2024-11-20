@@ -1,0 +1,432 @@
+* {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(242, 244, 247);
+}
+
+.container-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+
+
+
+
+/* SIDEBAR STYLE */
+.sidebar {
+  background-color: #0e223e;
+  display: flex;
+  width: 200px;
+  flex-direction: column;
+  transition: all ease-in .4s;
+
+}
+
+.sidebar-content .list-item {
+  display: flex;
+  flex-direction: row;
+  margin-left: 7px;
+  border-radius: 8px;
+  width: 180px;
+  height: 40px;
+  font-size: 13px;
+  box-sizing: border-box;
+
+}
+
+li {
+  list-style: none;
+  color: #FFFFFF;
+  margin-top: 38px;
+  margin-left: 20px;
+
+}
+
+.sidebar-content .list-item:hover {
+  background: black;
+  transition: all ease-in .2s;
+}
+
+a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.sidebar.hide {
+  width: 80px;
+  transition: all ease-out .2s;
+}
+
+.sidebar.hide img {
+  display: none;
+}
+
+.sidebar.hide hr {
+  display: none;
+}
+
+.sidebar.hide span {
+  display: none;
+}
+
+.sidebar.hide button {
+  display: none;
+}
+
+.sidebar hr {
+  border: none;
+  height: 2px;
+  width: 170px;
+  margin: 0;
+  margin-top: 20px;
+  border: 1px solid #FFFFFF;
+  opacity: 0.8;
+  margin-left: 15px;
+
+}
+
+p {
+  color: #FFFFFF;
+  font-style: normal;
+  font-size: 12px;
+  margin-top: 20px;
+  margin-left: 15px;
+}
+
+.list-menu li {
+  margin-top: 5px;
+  padding: 5px
+}
+
+.button-sidebar button {
+  background-color: black;
+  border: none;
+  color: #EEEEEE;
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  margin-top: 80px;
+  margin-left: 25px;
+}
+/* END SIDEBAR */
+
+
+
+
+
+/* MAIN CONTENT UTAMA STYLE */
+.main-content {
+  background-color: #EEEEEE;
+  flex-grow: 1;
+
+}
+
+.main-content .navbar {
+  height: 80px;
+  background-color: #0e223e;
+  margin-left: 25px;
+  margin-top: 10px;
+  width: 1100px;
+  border-radius: 10px;
+  padding: 20px;
+  color: #FFFFFF;
+
+}
+
+.main-content  h2{
+  position: relative;
+  color: #0e223e;
+  margin-left: 70px;
+  font-size: 40px;
+  -webkit-text-stroke: 0.1vw #383d52;}
+
+h2::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: white;
+  -webkit-text-stroke: 0vw #383d52;
+  border-right: 1px solid white;
+  overflow: hidden;
+  white-space: pre;
+  animation: animate 5s linear infinite;
+
+}
+
+@keyframes animate 
+{
+  0%, 10%, 100%{
+    width: 0;
+  }
+
+  70%, 90% {
+    width: 105%;
+  }
+}
+
+.main-content h3 {
+  margin-top: 10px;
+}
+
+/* STYLE TOMBOL HAMBURGER */
+#menu-button {
+  top: 30px;
+  width: 45px;
+  position: absolute;
+  overflow: hidden;
+}
+
+#menu-label {
+  position: relative;
+  display: block;
+  height: 20px;
+  cursor: pointer;
+}
+
+#menu-checkbox {
+  display: none;
+}
+
+#hamburger,
+#menu-label::after,
+#menu-label::before {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 100%;
+  height: 4px;
+  background-color: black;
+}
+
+#menu-label::after,
+#menu-label::before {
+  content: "";
+  transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#menu-label::before {
+  top: 0;
+}
+
+#menu-label::after {
+  top: 8px;
+}
+
+#hamburger {
+  top: 16px;
+}
+/* END MAIN CONTENT UTAMA */
+
+
+
+
+
+/* STYLE ALL CARD */
+/* card input tamu */
+.main-content .card-tambah-tamu {
+  background-color: #FFFFFF;
+  height: 480px;
+  width: 1100px;
+  margin-top: 10px;
+  margin-left: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5)
+
+}
+/* END CARD */
+
+
+
+
+
+/* START STYLE HALAMAN DAFTAR TAMU*/
+.main-content .card-daftar-tamu {
+  padding: 1px;
+  background-color: #FFFFFF;
+  position: relative;
+  height: 500px;
+  width: 1100px;
+  margin-top: 10px;
+  margin-left: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card-daftar-tamu .table-tamu{
+  background-color: #FFFFFF;
+  width: 1000px;
+  margin-left: 70px;
+  font-size: 11px;
+  text-align: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  border: none;
+}
+
+.card-daftar-tamu .table-tamu th,td{
+  padding: 5px;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+tbody tr:ntf-child(even) {
+  background-color: fafafa;
+}
+/* END STYLE HALAMAN DAFTAR TAMU */
+
+
+
+
+
+/* START STYLE HALAMAN DAFTAR PETUGAS */
+.main-content .card-daftar-petugas {
+  padding: 1px;
+  background-color: #FFFFFF;
+  position: relative;
+  height: 500px;
+  width: 1100px;
+  margin-top: 10px;
+  margin-left: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+} 
+
+.card-daftar-petugas .table-petugas{
+  background-color: #FFFFFF;
+  width: 1000px;
+  margin-left: 70px;
+  font-size: 14px;
+  text-align: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  border: none;
+}
+
+.card-daftar-tamu .table-tamu th,td{
+  padding: 5px;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+tbody tr:ntf-child(even) {
+  background-color: fafafa;
+}
+/* END STYLE HALAMAN DAFTAR PETUGAS */
+
+
+
+
+
+/* STYLE SEARCH */
+.search {
+  position: relative;
+  box-shadow: 0 0 40px rgba(51, 51, 51, .1);
+
+}
+
+.search .input-search {
+  width: 400px;
+  height: 36px;
+  margin-left: 300px;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.search input:focus {
+  box-shadow: none;
+  border: 2px solid #0e223e;
+}
+
+.search .btn-search {
+  border: 2px solid #0e223e;
+  position: absolute;
+  top: 1px;
+  right: 330px;
+  height: 34px;
+  width: 70px;
+  background: #0e223e;
+  font-size: 12px;
+  color: white;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+} 
+/* END STYLE SEARCH  */
+
+
+
+
+
+/* START STYLE HALAMAN INPUT DATA PETUGAS */
+.main-content .card-tambah-petugas {
+  background-color: #FFFFFF;
+  height: 450px;
+  width: 470px;
+  margin-top: 10px;
+  margin-left: 300px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card-tambah-petugas label {
+  font-size: 13px;
+  margin-bottom: 8px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.card-tambah-petugas input {
+  width: 400px;
+  height: 40px;
+}
+
+.card-tambah-petugas select {
+  margin-top: 35px;
+  margin-left: 30px;
+  width: 400px;
+  height: 40px;
+}
+
+.card-tambah-petugas .petugas-nama {
+  margin-top: 10px;
+  margin-left: 30px;
+
+}
+
+.card-tambah-petugas .petugas-password {
+  margin-top: 5px;
+  margin-left: 30px;
+}
+
+.card-tambah-petugas .petugas-tanggal {
+  margin-top: 5px;
+  margin-left: 30px;
+}
+
+.card-tambah-petugas  button {
+  background-color: #0e223e;
+  border: none;
+  color: #EEEEEE;
+  width: 150px;
+  height: 40px;
+  border-radius: 9px;
+  margin-top: 50px;
+  margin-left: 280px;
+}
+/* END STYLE HALAMAN INPUT DATA PETUGAS */
