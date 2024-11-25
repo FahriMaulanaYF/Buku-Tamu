@@ -5,11 +5,6 @@ use App\Http\Controllers\PetugasController;
 use App\Http\Controllers\TamuController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return redirect()->route('Login');
-});
-
-
 
 
 
