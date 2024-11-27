@@ -5,8 +5,13 @@ use App\Http\Controllers\PetugasController;
 use App\Http\Controllers\TamuController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/', function () {
+    return redirect()->route('Login');
+})->name('login');
 
-
+Route::get('/Tamu', function () {
+    return redirect()->route('Tamu.Tampil');
+});
 
 
 
@@ -16,7 +21,7 @@ route::post('/Login/Proses', [LoginController::class, 'Login_proses'])->name('lo
 route::get('/Logout', [LoginController::class, 'Logout'])->name('logout');
 
 
-
+Route::middleware(['auth'])->group(function () {
 // proses tamu
 route::get('/Tamu', [TamuController::class, 'Tampil'])->name('tamu.tampil');
 route::get('/Tamu/Tambah', [TamuController::class, 'Tambah'])->name('tamu.tambah');
@@ -35,3 +40,5 @@ route::get('/Petugas/Edit/{id}', [PetugasController::class, 'Edit'])->name('petu
 route::post('/Petugas/Update/{id}', [PetugasController::class, 'Update'])->name('petugas.update');
 route::post('/Petugas/Delete/{id}', [PetugasController::class, 'Delete'])->name('petugas.delete');
 route::get('/Petugas/Search', [PetugasController::class, 'search'])->name('petugas.search');
+
+});

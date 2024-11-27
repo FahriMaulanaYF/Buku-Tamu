@@ -86,7 +86,9 @@
 </head>
 
 <body>
-
+  @if(Session::get('failed'))
+  <div style="color: red; "></div>
+  @endif
   <form method="POST" action="{{ route('login_proses') }}" class="needs-validation" novalidate="">
     @csrf
     <div class="container-fluid">

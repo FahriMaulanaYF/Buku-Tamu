@@ -3,17 +3,7 @@
 @include('template.sidebar')
 
 <div class="main-content">
-    <nav class="navbar">
-        <div id="menu-button">
-            <input type="checkbox" id="menu-checkbox">
-            <label for="menu-checkbox" id="menu-label">
-                <div id="hamburger"></div>
-            </label>
-        </div>
-        <div class="typing">
-            <h2 data-text="Dinas Perhubungan Kota Bandung">Dinas Perhubungan Kota Bandung</h2>
-        </div>
-    </nav>
+    @include('template.navbar')
     <h3 style="margin-left: 60px;  ">Tambah Data Tamu</h3>
 
 
@@ -23,7 +13,7 @@
             <div class="row g-0">
                 <div class=" col-md-7">
 
-
+                    {{-- Pengisian Data Nama Lengkap --}}
                     <div class="row g-3 align-items-center"
                         style="margin-top: 5px; margin-left:8px; margin-bottom:20px">
                         <div class="col-auto">
@@ -34,7 +24,7 @@
                         </div>
                     </div>
 
-
+                    {{-- Pengisian Data Jenis Kelamin --}}
                     <div class="row g-3 align-items-center" style="margin-left:8px; margin-bottom:20px;">
                         <div class="col-auto">
                             <b><label style="font-size: 14px">JENIS KELAMIN</label></b>
@@ -49,7 +39,7 @@
                         </div>
                     </div>
 
-
+                    {{-- Pengisian Data No HP --}}
                     <div class="row g-3 align-items-center" style="margin-left:8px; margin-bottom:20px;">
                         <div class="col-auto">
                             <b><label style="font-size: 14px">HP/WHATSAPP</label></b>
@@ -60,7 +50,7 @@
                     </div>
                     <hr style="width: 580px; margin-left: 20px">
 
-
+                    {{-- Pengisian Data Jenis Tamu --}}
                     <div class="row mb-3" style="margin-top: 5px; margin-left:8px; margin-bottom:20px">
                         <div class="col-form-label col-sm-2 pt-0" style="font-size: 14px"><b>JENIS TAMU</b></div>
                         <div class="col-sm-10">
@@ -81,11 +71,11 @@
                         </div>
                     </div>
 
-
+                    {{-- Pengisian Data Keterangan --}}
                     <div class="row g-3 align-items-center"
                         style="margin-top: 5px; margin-left:8px; margin-bottom:20px">
                         <div class="col-auto">
-                            <b><label style="font-size: 14px">KEPERLUAN <br> TERKAIT <br> ANDA <br> BERTAMU</label></b>
+                            <b><label style="font-size: 14px">KETERANGAN <br> TERKAIT <br> ANDA <br> BERTAMU</label></b>
                         </div>
                         <div class="col-auto" style="margin-left: 20px">
                             <textarea class="form-control" name="tujuan" rows="3" autocomplete="off" style="width: 460px; height: 150px"></textarea>
@@ -94,7 +84,7 @@
                  </div>
 
 
-
+                 {{-- Pengisisan Data Keperluan --}}
                 <div class="col-md-5" style="margin-top: 25px">
                     <div style="font-size: 14px"><b>KEPERLUAN BERTAMU</b></div>
                     <hr style="margin-top: 3px; width: 420px ">
@@ -106,7 +96,7 @@
                                 1. Bertemu PLT Kepala Dinas
                             </label>
                         </div>
-                        <span style="margin-left: 40px; font-size: 11px;">haha</span>
+                        <span style="margin-left: 40px; font-size: 11px;">Asep</span>
                         <hr style="margin-top: 5px; width: 380px">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="keperluan" id="sekdis"
@@ -144,15 +134,17 @@
                         </div>
                         <span style="margin-left: 40px; font-size: 11px;">haha</span>
                         <hr style="margin-top: 5px; width: 380px">
+
+
                         <button
-                        style="background-color: #0e223e; border: none; color: #EEEEEE;  width: 150px;  height: 40px;  border-radius: 9px; margin-left: 290px;x">SIMPAN
-                        DATA</button>
+                        style="background-color: #0e223e; border: none; color: #EEEEEE;  width: 150px; 
+                         height: 40px;  border-radius: 9px; margin-left: 290px;x">SIMPAN DATA
+                        </button>
                     </div>
                 </div>
             </div>
         </form> 
     </div>
 </div>
-
 
 @include('template.footer')

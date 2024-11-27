@@ -22,4 +22,11 @@ class LoginMiddleware
         }
         return $next($request);
     }
+
+    protected function redirecTo($request) 
+    {
+        if (!$request->expectsjson()) {
+            return route('Login');
+        }
+    }
 }

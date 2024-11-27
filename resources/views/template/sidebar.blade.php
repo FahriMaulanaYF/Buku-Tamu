@@ -1,7 +1,7 @@
    <!-- sidebar  -->
    <div class="sidebar">
      <div class="sidebar-header">
-       <img class="mt-5" src="{{ ('images/Icon Dishub.png') }}" alt="" style="width: 100px; margin-left: 50px">
+       <img class="mt-5" src="{{ asset('images/Icon Dishub.png') }}" alt="" style="width: 100px; margin-left: 50px">
        <hr>
        <p>HOME</p>
      </div>
