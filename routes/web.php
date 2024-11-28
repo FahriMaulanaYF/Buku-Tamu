@@ -30,8 +30,10 @@ route::get('/Tamu/Edit/{id}', [TamuController::class, 'Edit'])->name('tamu.edit'
 route::post('/Tamu/Update/{id}', [TamuController::class, 'Update'])->name('tamu.update');
 route::post('/Tamu/Delete/{id}', [TamuController::class, 'Delete'])->name('tamu.delete');
 route::get('/Tamu/Search', [TamuController::class, 'search'])->name('tamu.search');
+});
 
 
+Route::middleware(['auth'])->group(function () {
 // proses petugas
 route::get('/Petugas', [PetugasController::class, 'Tampil'])->name('petugas.tampil');
 route::get('/Petugas/Tambah', [PetugasController::class, 'Tambah'])->name('petugas.tambah');
@@ -40,5 +42,5 @@ route::get('/Petugas/Edit/{id}', [PetugasController::class, 'Edit'])->name('petu
 route::post('/Petugas/Update/{id}', [PetugasController::class, 'Update'])->name('petugas.update');
 route::post('/Petugas/Delete/{id}', [PetugasController::class, 'Delete'])->name('petugas.delete');
 route::get('/Petugas/Search', [PetugasController::class, 'search'])->name('petugas.search');
-
 });
+

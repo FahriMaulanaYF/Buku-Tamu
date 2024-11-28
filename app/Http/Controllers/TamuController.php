@@ -18,9 +18,6 @@ class TamuController extends Controller
         return view('tamu.tambah');
     }
 
-   
-
-
     function sumbit(Request $request) {
         $tamu = new Tamu();
         $tamu->nama = $request->nama;
@@ -31,13 +28,14 @@ class TamuController extends Controller
         $tamu->keperluan = $request->keperluan;
         $tamu->save();
 
-        // echo $tamu->jeniskelamin->value;
+
         return redirect()->route('tamu.tampil');
         
     }
 
     function edit($id) {
         $tamu = Tamu::find($id);
+
         return view('tamu.edit', compact('tamu'));
         
     }
@@ -58,6 +56,7 @@ class TamuController extends Controller
     function delete($id) {
         $tamu = Tamu::find($id);
         $tamu->delete();
+
         return redirect()->route('tamu.tampil')->with('hapus','kamu menghapus data');
         
     }
@@ -66,13 +65,12 @@ class TamuController extends Controller
         $tamu = tamu::query();
         if($request->has('search')) {
            $tamu->where(function($query)use($request) {
-            $query->whereAny(['nama'],'LIKE','%' .$request->input('search').'%');
+            $query->whereAny(['nama','jenkel','no_hp','jenistamu','keperluan'],'LIKE','%' .$request->input('search').'%');
            });
         }
         $tamu = $tamu->paginate();
+
         return view('tamu.tampil', ['tamu' => $tamu]);
     }
 
-    
-  
 }
